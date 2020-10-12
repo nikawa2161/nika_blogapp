@@ -6,7 +6,7 @@ before_action :set_article, only: [:show, :edit, :update]
     end
 
     def show
-       
+
     end
 
     def new
@@ -33,7 +33,7 @@ before_action :set_article, only: [:show, :edit, :update]
         flash.now[:error] = '残念だったな！'
         render :edit
       end
-      
+
     end
 
     def destroy
@@ -51,4 +51,3 @@ before_action :set_article, only: [:show, :edit, :update]
     @article = Article.find(params[:id])
   end
 end
-
