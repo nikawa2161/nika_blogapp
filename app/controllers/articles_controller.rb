@@ -31,12 +31,11 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
     def update
       @article = current_user.articles.find(params[:id])
       if @article.update(article_params)
-        redirect_to article_path(@article), notice: '更新できたぜ!!!'
+        redirect_to article_path(@article), notice: '更新できました'
       else
-        flash.now[:error] = '残念だったな！'
+        flash.now[:error] = '更新できませんでした'
         render :edit
       end
-
     end
 
     def destroy
@@ -47,7 +46,7 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
 
    private
   def article_params
-    params.require(:article).permit(:title ,:content ,:eyecatch)
+    params.require(:article).permit(:title, :content, :eyecatch)
   end
 
   def set_article
