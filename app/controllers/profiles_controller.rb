@@ -30,5 +30,6 @@ class ProfilesController < ApplicationController
             :subscrided,
             :avatar
         )
+
     end
 end

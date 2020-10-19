@@ -2,7 +2,6 @@
   %ul
     - @profile.errors.full_messages.each do |message|
       %li= message
-
   = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
     %div
       = f.label :avatar, 'アバター'
@@ -27,5 +26,4 @@
     %div
       = f.label :subscribed, '通知を受け取る'
       = f.check_box :subscribed
-
     = f.submit '保存', class: 'btn-primary'
