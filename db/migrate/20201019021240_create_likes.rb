@@ -3,7 +3,6 @@ class CreateLikes < ActiveRecord::Migration[6.0]
     create_table :likes do |t|
       t.references :user, null: false
       t.references :article, null: false
-
       t.timestamps
     end
   end
